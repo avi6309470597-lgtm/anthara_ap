@@ -50,14 +50,43 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
               const SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Start Journey'),
-              ),
-            ],
+             ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const JourneyScreen(),
+      ),
+    );
+  },
+  child: const Text('Start Journey'),
+), 
+                
+                
+            
           ),
         ),
       ),
     );
+class JourneyScreen extends StatelessWidget {
+  const JourneyScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Anthara')),
+      body: const Center(
+        child: Padding(
+          padding: EdgeInsets.all(24),
+          child: Text(
+            '🙏 Welcome to Anthara\n\nInspired by Gita and Science\n\nYour Journey Started!',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 22),
+          ),
+        ),
+      ),
+    );
+  }
+}
   }
 }
